@@ -1,0 +1,69 @@
+def tri1(n):
+    i =1
+    while i<=n:
+        x=1
+        while x<=i:
+            print("*", end=" ")
+            x += 1
+        print("\n")
+        i +=1
+        
+def tri2(n):
+        i = 1
+        while i <= n:
+            x=n
+            while x >= i:
+                print("*"  , end=" " )
+                x-=1
+            print("\n")
+            i +=1
+        
+def tri3(n):
+    i=1
+    while i<=n:
+        x =n-1
+        while x>=i:
+            print(" "  , end=" "  )
+            x-=1
+        x= 1
+        while x<=i:
+            print("*" ,end=" ")
+            x +=1
+        print("\n")
+        i+=1
+        
+def tri4(n):
+    i=1
+    while i<=n:
+        x=1
+        while x<i:
+            print(" ",end=" ")
+            x +=1
+        x = n
+        while x>=i:
+            print("*", end=" ")
+            x-=1
+        print("\n")
+        i += 1
+       
+def tri5(n):
+    tri3(n)
+    i =1
+    while i<=n:
+        x=1
+        while x<=i:
+            print(" ", end=" ")
+            x +=1
+        x = n-1
+        while x>=i:
+            print("*",end=" ")
+            x-=1
+        print("\n")
+        i +=1
+n =5
+
+print(tri1(n))
+print(tri2(n))
+print(tri3(n))
+print(tri4(n))
+print(tri5(n))
