@@ -1,0 +1,48 @@
+def bubble_sort(x):
+    i = 0
+    while i < len(x):
+        j = 0
+        while j < len(x)-1:
+            if x[j] < x[j + 1]:
+
+                temp = x[j]
+                x[j] = x[j+1]
+                x[j+1] = temp
+                
+            j += 1
+        i += 1
+    return x
+
+def insert_sort(x):
+    i = 0
+    while i < len(x):
+        j = i - 1
+        temp = x[i]
+        while j>= 0 and x[j] < temp:
+            x[j+1] = x[j]
+            j -= 1
+            x[j+1] = temp
+        i += 1
+    return x
+
+def select_sort(x):
+    i = 0
+    while i < len(x):
+        j = 0
+        cur = i
+        while j <= i:
+            if x[j] > x[cur]:
+                cur = j
+                temp = x[cur]
+                x[cur] = x[i]
+                x[i] = temp
+            j += 1
+        i += 1
+    return x
+
+data = [-2, 45, 0, 11, -9]
+data2 = [5,3,1,2,4]
+data3 = [9,7,3,1,2]
+print(bubble_sort(data))
+print(insert_sort(data2))
+print(select_sort(data3))
