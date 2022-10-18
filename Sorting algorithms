@@ -28,16 +28,17 @@ def insert_sort(x):
 def select_sort(x):
     i = 0
     while i < len(x):
-        j = 0
-        cur = i
-        while j <= i:
-            if x[j] > x[cur]:
+        j = i +1
+        cur = i 
+        while j < len(x):
+            if x[j] < x[cur]:
                 cur = j
-                temp = x[cur]
-                x[cur] = x[i]
-                x[i] = temp
             j += 1
+        temp = x[cur]
+        x[cur] = x[i]
+        x[i] = temp
         i += 1
+    
     return x
 
 data = [-2, 45, 0, 11, -9]
