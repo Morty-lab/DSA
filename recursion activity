@@ -1,0 +1,39 @@
+
+
+def power(n, p):
+    if p == 0 :
+        return 1
+    else:
+        return n*power(n,p-1)
+
+def multiply(a,b):
+    if b==0:
+        return 0
+
+    else:
+        return a + multiply(a,b-1)
+
+def divide(a,b):
+    if a < b:
+        return 0
+    else:
+        return 1 + divide(a-b,b)
+
+list = [[3,2],[4,2],[15,5]]
+
+print('for loop Execution')
+
+for i in list:
+
+    print(power(i[0],i[1]))
+    print(multiply(i[0],i[1]))
+    print(divide(i[0],i[1]))
+
+print('While loop Execution')
+i = 0
+while i < len(list):
+    print(power(list[i][0],list[i][1]))
+    print(multiply(list[i][0],list[i][1]))
+    print(divide(list[i][0],list[i][1]))
+
+    i += 1
