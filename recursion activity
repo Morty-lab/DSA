@@ -1,5 +1,3 @@
-
-
 def power(n, p):
     if p == 0 :
         return 1
@@ -16,24 +14,26 @@ def multiply(a,b):
 def divide(a,b):
     if a < b:
         return 0
+    elif b == 0:
+        return 'Divide by 0'
     else:
         return 1 + divide(a-b,b)
 
-list = [[3,2],[4,2],[15,5]]
+list = [[3,2],[4,2],[15,5], [6, 8]]
 
-print('for loop Execution')
-
+print('\nFor loop Execution\n')
+j =0
 for i in list:
+    j+=1
+    print(f'Power of item {j}: {power(i[0],i[1])}')
+    print(f'Product of item {j}: {multiply(i[0],i[1])}')
+    print(f'Quotient of item {j}: {divide(i[0],i[1])}')
 
-    print(power(i[0],i[1]))
-    print(multiply(i[0],i[1]))
-    print(divide(i[0],i[1]))
-
-print('While loop Execution')
+print('\nWhile loop Execution \n')
 i = 0
 while i < len(list):
-    print(power(list[i][0],list[i][1]))
-    print(multiply(list[i][0],list[i][1]))
-    print(divide(list[i][0],list[i][1]))
-
+    i += 1
+    print(f'Power of Item {(i)} : {power(list[i][0],list[i][1])}')
+    print(f'Product of Item {(i)} : {multiply(list[i][0],list[i][1])}')
+    print(f'Quotient of Item {(i)} : {divide(list[i][0],list[i][1])}')
     i += 1
