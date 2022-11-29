@@ -23,9 +23,10 @@ class stack:
         while stack_top >=0:
             print(self.stack[stack_top])
             stack_top-= 1
+            
 
     def peek(self):
-        return self.stack[self.stack]
+        return self.stack[self.top]
 
     def size(self):
         return self.top + 1
@@ -39,12 +40,14 @@ class stack:
     def check(self):
         open_list = ["[","{","("]
         close_list = ["]","}",")"]
+        if self.str == '':
+            return 'No value'
         for i in self.str:
             if i in open_list:
                 self.push(i)
             elif i in close_list:
                 pos = close_list.index(i)
-                if ((len(self.stack)> 0 and open_list[pos]==self.stack[len(self.stack)-1])):
+                if ((self.size()> 0 and open_list[pos]==self.stack[len(self.stack)-1])):
                     self.stack.pop()
                 else:
                     return 'Unbalanced'
@@ -55,10 +58,16 @@ class stack:
 
 stack1 = stack("{[]{()}}")
 stack2 = stack("[{}{})(]")
-stack3 = stack("((()")
-stack3.push(4)
-stack3.push(5)
-print(stack3.display_stack())
-# print(stack1.check())
-# print(stack2.check())
-# print(stack3.check())
+stack3 = stack("()")
+stack4 = stack('')
+
+# stack4.push(5)
+# stack4.push(4)
+# stack4.push(3)
+# stack4.push(2)
+# print(stack4.display_stack())
+
+print(stack1.check())
+print(stack2.check())
+print(stack3.check())
+print(stack4.check())
